@@ -9,7 +9,11 @@ class Ingredient {
         $this->item = strval($item);
         $this->amount = intval($amount);
         $this->usedBy = $usedBy;
-        $this->unit = $unit;
+        if (Unit::validate($unit)) {
+            $this->unit = strtolower($unit);
+        } else {
+            throw new InvalidArgumentException("Invalid unit");
+        }
     }
 
     public function getItem() {

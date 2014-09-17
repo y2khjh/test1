@@ -7,10 +7,17 @@ class Fridge {
     }
 
     public function put(Ingredient $ingredient) {
-        $this->items[] = $ingredient;
+        if (!$ingredient->hasExpired()) {
+            $this->items[] = $ingredient;
+        }
     }
 
     public function lookup(Ingredient $ingredient) {
-        return array();
+        $positions = array_keys($this->items, $ingredient, true);
+        $results = array();
+        foreach ($positions as $index) {
+            $results[] = &$this->items[$index];
+        }
+        return $results;
     }
 }
