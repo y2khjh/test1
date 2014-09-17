@@ -1,0 +1,27 @@
+<?php
+include_once 'Bootstrap.php';
+
+class RecipeTest extends PHPUnit_Framework_TestCase {
+
+    public function testRecipeWhenValid() {
+        $name = 'bread with butter';
+        $ingredients = array(
+            new Ingredient('bread', 1, 'slices', new DateTime('+30 day')),
+            new Ingredient('butter', 1, 'slices', new DateTime('+30 day')),
+        );
+        $recipe = new Recipe($name, $ingredients);
+
+        $this->assertEquals($recipe->getName(), $name);
+        $this->assertEquals($recipe->getIngredients(), $ingredients);
+    }
+
+    public function testRecipeWithNotIngredient() {
+        $this->setExpectedException('InvalidArgumentException');
+        $recipe = new Recipe('bad recipe', array());
+    }
+
+    public function testRecipeWithBadIngredient() {
+        $this->setExpectedException('InvalidArgumentException');
+        $recipe = new Recipe('bad recipe', array(1, 2));
+    }
+}
