@@ -1,8 +1,10 @@
 === Required ===
+
 PHP 5.3.10+
 PHPUnit 4.2.6+
 
 === How to run ===
+
 
 php Main.php <file1> <file2>
 
@@ -15,5 +17,6 @@ fridge.csv and recipes.js
 
 
 === How to run Unit Test ===
+
 
 phpunit --bootstrap Bootstrap.php tests/
