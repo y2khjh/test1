@@ -9,6 +9,7 @@ PHPUnit 4.2.6+
 php Main.php <file1> <file2>
 
 <file1> - fridge CSV data
+
 <file2> - recipes JSON data
 
 if <file1> and <file2> not given, by default the program will use:
