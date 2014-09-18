@@ -1,6 +1,4 @@
 <?php
-include_once 'Bootstrap.php';
-
 class UnitTest extends PHPUnit_Framework_TestCase {
 
     public function testValidateFunction() {

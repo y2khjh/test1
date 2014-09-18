@@ -1,6 +1,4 @@
 <?php
-include_once 'Bootstrap.php';
-
 class IngredientTest extends PHPUnit_Framework_TestCase {
 
     public function testIngredientWhenValid() {

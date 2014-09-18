@@ -1,6 +1,6 @@
 <?php
 class Ingredient {
-    public $item;
+    private $item;
     private $amount;
     private $unit;
     private $usedBy;
@@ -14,6 +14,10 @@ class Ingredient {
         } else {
             throw new InvalidArgumentException("Invalid unit");
         }
+    }
+
+    public function __toString() {
+        return $this->item . '@' . $this->unit;
     }
 
     public function getItem() {
@@ -37,5 +41,9 @@ class Ingredient {
             return true;
         }
         return false;
+    }
+
+    public function addAmount($amount) {
+        $this->amount += $amount;
     }
 }
