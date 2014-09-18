@@ -6,13 +6,13 @@ PHPUnit 4.2.6+
 === How to run ===
 
 
-php Main.php <file1> <file2>
+php Main.php csvfile1 jsonfile2
 
-<file1> - fridge CSV data
+csvfile1 - fridge CSV data
 
-<file2> - recipes JSON data
+jsonfile2 - recipes JSON data
 
-if <file1> and <file2> not given, by default the program will use:
+if csvfile1 and jsonfile2 not given, by default the program will use:
 
 fridge.csv and recipes.js
 
